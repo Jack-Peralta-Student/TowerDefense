@@ -23,6 +23,23 @@ namespace TowerDefense
             Destroy(gameObjects[tileCoordinates]);
             gameObjects.Remove(tileCoordinates);
         }
+
+        public static Vector3Int WorldToGrid(Vector3 worldPosition)
+        {
+            return new Vector3Int(
+                Mathf.RoundToInt(worldPosition.x),
+                Mathf.RoundToInt(worldPosition.y),
+                Mathf.RoundToInt(worldPosition.z)
+            );
+        }
+        public static Vector3 GridToWorld(Vector3Int gridPosition)
+        {
+            return new Vector3(
+                gridPosition.x,
+                gridPosition.y,
+                gridPosition.z
+            );
+        }
     }
 }
 
